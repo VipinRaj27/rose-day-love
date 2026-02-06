@@ -31,6 +31,10 @@ const secretMessage = document.getElementById("secretMessage");
 
 function openSecret(event) {
   secretMessage.style.display = "block";
+  const music = document.getElementById("bgMusic");
+    if (music) {
+      music.play().catch(() => {});
+    }
 
   // Small delay for smoother animation
   setTimeout(() => {
@@ -93,3 +97,4 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
