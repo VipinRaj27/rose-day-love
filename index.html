@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9f4f6b5c64.mp3">
+</audio>
+
+<!-- Animation layers -->
+<div id="petal-container"></div>
+<div id="heart-container"></div>
+<div id="confetti-container"></div>
+
+<div class="overlay"></div>
+
+<div class="card">
+  <h1>🌹 Happy Rose Day 🌹</h1>
+
+  <p class="name">
+    For you, <span>My Dora</span> ❤️
+  </p>
+
+  <p>
+    This rose carries my feelings,<br>
+    my care, and my heart 🌹
+  </p>
+
+  <button id="secretBtn" onclick="openSecret(event)">
+    Open My Secret Message💌
+  </button>
+
+  <div id="secretMessage">
+  <p>
+    From the moment you came into my life,<br>
+    even ordinary days started feeling beautiful.<br><br>
+
+    This rose is not just for today 🌹<br>
+    it’s for every smile, every memory,<br>
+    and every moment I wish to spend with you ❤️
+  </p>
+</div>
+
+
+  <div class="countdown">
+    <h3>⏳ Counting down to Valentine’s Day</h3>
+    <p id="timer">Loading...</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7")
+    center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255,255,255,0.97);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  color: #c9184a;
+}
+
+.name span {
+  color: #b5179e;
+  font-weight: 600;
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff4d6d, #ff758f);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Secret message */
+#secretMessage {
+  display: none;
+  margin-top: 15px;
+  color: #6a040f;
+  font-weight: 600;
+}
+
+/* Countdown */
+#timer {
+  color: #b5179e;
+  font-weight: bold;
+}
+
+/* Falling petals */
+#petal-container, #heart-container, #confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  font-size: 28px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh) rotate(0deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* Floating hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); opacity: 0; }
+  to { transform: translateY(-20vh); opacity: 1; }
+}
+
+/* Confetti + sparkles */
+.confetti {
+  position: absolute;
+  font-size: 20px;
+  animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+  from { transform: translateY(0) scale(1); opacity: 1; }
+  to { transform: translateY(100vh) scale(1.5); opacity: 0; }
+}
+
+/* Click explosion */
+.explode-heart {
+  position: fixed;
+  font-size: 24px;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  to {
+    transform: translateY(-80px) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-40%); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
+/* Animated secret message */
+#secretMessage {
+  display: none;
+  margin-top: 18px;
+  color: #6a040f;
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  transition: all 0.8s ease;
+}
+
+#secretMessage.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Soft glow when opened */
+#secretMessage.show p {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(255, 77, 109, 0.4);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 77, 109, 0.8);
+  }
+}
